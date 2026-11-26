@@ -130,7 +130,7 @@ def page(fn, cur, title, desc, body):
     open(fn, 'w').write(head(title, desc) + header(cur) + body + FOOTER)
 
 # ---------- HOME ----------
-tiles = ''.join(f'<article class="tile"><img src="img/{img}.jpg" alt="" loading="lazy"><div><h3>{t}</h3><p>{d}</p></div><a href="services.html#{sid}" aria-label="{t}"></a></article>'
+tiles = ''.join(f'<article class="tile"><img src="photo-{img}.jpg" alt="" loading="lazy"><div><h3>{t}</h3><p>{d}</p></div><a href="services.html#{sid}" aria-label="{t}"></a></article>'
                 for sid, t, img, d, _ in SERVICES)
 home = f'''<section class="hero" aria-label="Introduction">
  <div class="wrap">
@@ -227,7 +227,7 @@ page('about.html', 'about.html', 'About | Emprise Partners', 'About Emprise Part
 
 # ---------- SERVICES ----------
 svc_rows = ''.join(f'''<div class="svc" id="{sid}">
-   <div class="svcimg"><img src="img/{img}.jpg" alt="" loading="lazy"></div>
+   <div class="svcimg"><img src="photo-{img}.jpg" alt="" loading="lazy"></div>
    <div><h2>{t}</h2><p>{d}</p><ul>{''.join(f"<li>{x}</li>" for x in items)}</ul></div>
   </div>
   ''' for sid, t, img, d, items in SERVICES)
