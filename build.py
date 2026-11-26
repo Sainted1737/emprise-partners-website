@@ -211,7 +211,7 @@ about = phero('about', 'About Emprise Partners', 'A prime contractor for facilit
    <li><div><h3>Oversight and supervision</h3><p>We assign each scope to a qualified partner, set the schedule and standards, and supervise the work through completion.</p></div></li>
    <li><div><h3>Compliance</h3><p>Insurance, licensing and documentation tracked and verified for every partner before they set foot on site.</p></div></li>
    <li><div><h3>Quality assurance</h3><p>Inspections and reporting hold every job to the same standard, at every location.</p></div></li>
-   <li><div><h3>Responsiveness</h3><p>A reply within one business day, from bid questions to field issues.</p></div></li>
+   <li><div><h3>Responsiveness</h3><p>Prompt replies, from bid questions to field issues.</p></div></li>
   </ol>
  </div>
 </section>
@@ -323,7 +323,7 @@ partners = phero('infrastructure', 'Become a trade partner', 'Steady public-sect
 page('partners.html', 'partners.html', 'Vendor Partners | Emprise Partners', 'Join the Emprise Partners trade partner network.', partners)
 
 # ---------- CONTACT ----------
-contact = phero('about', 'Contact Emprise Partners', 'Contracting officers, procurement teams and commercial clients: tell us what you need and we will respond within one business day.') + f'''
+contact = phero('about', 'Contact Emprise Partners', 'Contracting officers, procurement teams and commercial clients: tell us what you need and we will be in touch soon.') + f'''
 <section class="band">
  <div class="wrap two">
   <div>

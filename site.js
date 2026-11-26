@@ -39,7 +39,7 @@
    if (!f.checkValidity()) { f.reportValidity(); return; }
    // Spam trap: bots fill the hidden "website" field or submit instantly; pretend success and drop it.
    if ((f.querySelector('[name=website]')?.value || '') !== '' || Date.now() - loadedAt < 3000) {
-    ok.textContent = 'Thank you. Emprise Partners will be in touch within one business day.'; ok.classList.add('show'); f.reset(); return;
+    ok.textContent = 'Thank you. Emprise Partners will be in touch soon.'; ok.classList.add('show'); f.reset(); return;
    }
    const fd = new FormData(f);
    const data = Object.fromEntries(fd);
@@ -58,7 +58,7 @@
    try {
     const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', ...FORM_HEADERS }, body: JSON.stringify(data) });
     if (!r.ok) throw new Error(r.status);
-    show('Thank you. Emprise Partners will be in touch within one business day.');
+    show('Thank you. Emprise Partners will be in touch soon.');
     f.reset();
    } catch (err) {
     show('Something went wrong. Please call 800.254.0658 or email info@emprise-partners.com.');
