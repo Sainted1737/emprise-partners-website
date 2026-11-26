@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Email signature | Emprise Partners</title>
+<style>
+ :root{color-scheme:light}
+ body{margin:0;background:#f3f4f6;color:#111827;font:16px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+ .wrap{max-width:760px;margin:0 auto;padding:32px 20px 64px}
+ h1{font-size:26px;margin:0 0 6px}
+ h2{font-size:18px;margin:32px 0 10px}
+ p.lede{color:#555f6d;margin:0 0 24px}
+ .card{background:#fff;border:1px solid #dfe3e8;border-radius:6px;padding:24px}
+ .grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+ @media(max-width:560px){.grid{grid-template-columns:1fr}}
+ label{display:grid;gap:6px;font-size:13.5px;font-weight:600}
+ input{font:16px Arial,sans-serif;padding:10px 12px;border:1px solid #b9c0ca;border-radius:3px}
+ input:focus{outline:2px solid #0c52ac;border-color:#0c52ac}
+ .hint{font-weight:400;color:#555f6d;font-size:12.5px}
+ .preview{background:#fff;border:1px dashed #b9c0ca;border-radius:6px;padding:24px}
+ .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+ button{font:600 15px Arial,sans-serif;padding:12px 18px;border:0;border-radius:3px;cursor:pointer;background:#0c52ac;color:#fff}
+ button.alt{background:#fff;color:#0c52ac;box-shadow:inset 0 0 0 1px #0c52ac}
+ .msg{margin-top:10px;font-size:14px;color:#0a6b3a;min-height:1.4em}
+ ol{padding-left:20px;margin:6px 0 0}ol li{margin:4px 0}
+ details{background:#fff;border:1px solid #dfe3e8;border-radius:6px;padding:14px 18px;margin-top:10px}
+ summary{font-weight:600;cursor:pointer}
+ pre{background:#f3f4f6;padding:12px;border-radius:4px;white-space:pre-wrap;font:14px/1.5 Menlo,Consolas,monospace}
+</style>
+</head>
+<body>
+<main class="wrap">
+ <h1>Emprise Partners email signature</h1>
+ <p class="lede">Fill in your details, check the preview, then copy it into Outlook.</p>
+
+ <div class="card">
+  <div class="grid">
+   <label>First and last name<input id="name" autocomplete="name" placeholder="Jane Smith"></label>
+   <label>Title<input id="title" placeholder="Contracts Lead"></label>
+   <label>Office extension <span class="hint">Leave blank if none</span><input id="ext" inputmode="numeric" placeholder="101"></label>
+   <label>Cell <span class="hint">Leave blank to hide</span><input id="cell" inputmode="tel" placeholder="407.555.0100"></label>
+  </div>
+ </div>
+
+ <h2>Preview</h2>
+ <div class="preview" id="preview"></div>
+ <div class="btns">
+  <button id="copy">Copy signature (Mac &amp; PC)</button>
+  <button class="alt" id="copytext">Copy phone version</button>
+ </div>
+ <div class="msg" id="msg" role="status"></div>
+
+ <h2>Add it to Outlook</h2>
+ <details open><summary>Outlook on Mac</summary><ol>
+  <li>Click <b>Copy signature</b> above.</li>
+  <li>In Outlook, go to <b>Outlook → Settings → Signatures</b> (in the newer Outlook: <b>Settings → Accounts → Signatures</b>).</li>
+  <li>Click <b>+</b> to add a new one, name it "Emprise Partners", and delete any text in the box.</li>
+  <li>Click in the box and press <b>Cmd+V</b> to paste.</li>
+  <li>Set it as the default for <b>New messages</b> and <b>Replies/forwards</b>, then save.</li>
+ </ol></details>
+ <details><summary>Outlook on Windows PC (HP, Dell, etc.)</summary><ol>
+  <li>Open this page in Chrome or Edge and click <b>Copy signature</b>.</li>
+  <li>New Outlook: <b>Settings (gear) → Accounts → Signatures</b>. Classic Outlook: <b>File → Options → Mail → Signatures</b>.</li>
+  <li>Click <b>New signature</b>, name it "Emprise Partners", click in the box and press <b>Ctrl+V</b>.</li>
+  <li>Choose it as the default for new messages and replies/forwards, then <b>Save</b>.</li>
+ </ol></details>
+ <details><summary>Outlook on iPhone</summary><ol>
+  <li>Click <b>Copy phone version</b> above (or open this page on your phone and tap it).</li>
+  <li>In the Outlook app, tap your profile picture → <b>Settings (gear) → Signature</b>.</li>
+  <li>Delete "Get Outlook for iOS", paste, and tap back to save.</li>
+ </ol><p class="hint" style="margin:8px 0 0">The iPhone app only shows plain text signatures, so the phone version has no logo. That's normal.</p></details>
+ <details><summary>If the paste doesn't work</summary><p style="margin:8px 0 0">Click inside the preview box, press Cmd+A (Mac) or Ctrl+A (PC) to select it, copy, and paste into Outlook.</p></details>
+</main>
+
+<script>
+{
+ const LOGO = 'https://emprise-partners.com/email/emprise-partners-logo.png';
+ const OFFICE = '321.414.8926';
+ const $ = id => document.getElementById(id);
+ const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+ const val = id => $(id).value.trim();
+ // Prefill from the link, e.g. signature.html?name=Jane%20Smith&title=Contracts%20Lead&ext=102&cell=4075550100
+ const q = new URLSearchParams(location.search);
+ for (const k of ['name','title','ext','cell']) if (q.get(k)) $(k).value = q.get(k);
+
+ const fmtCell = s => { const d = s.replace(/\D/g,''); return d.length === 10 ? `${d.slice(0,3)}.${d.slice(3,6)}.${d.slice(6)}` : s; };
+ const F = "font-family:Calibri,Arial,Helvetica,sans-serif;";
+ const line = (label, value) => `<tr><td style="${F}font-size:14px;line-height:20px;color:#111827;padding:0"><b>${label}:</b> ${value}</td></tr>`;
+
+ function html() {
+  const name = esc(val('name') || 'First Last'), title = esc(val('title') || 'Title');
+  const ext = val('ext').replace(/\D/g,''), cell = fmtCell(val('cell'));
+  return `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;${F}">
+<tr><td style="padding:0 0 12px 0"><table cellpadding="0" cellspacing="0" border="0" width="300" style="border-collapse:collapse"><tr><td height="3" style="height:3px;line-height:3px;font-size:3px;background:#0c52ac">&nbsp;</td></tr></table></td></tr>
+<tr><td style="${F}font-size:16px;line-height:21px;font-weight:bold;color:#111827;padding:0">${name}</td></tr>
+<tr><td style="${F}font-size:14px;line-height:20px;color:#111827;padding:0 0 10px 0">${title}</td></tr>
+${line('Office', OFFICE + (ext ? ' ext. ' + esc(ext) : ''))}
+${cell ? line('Cell', esc(cell)) : ''}
+<tr><td style="${F}font-size:13px;line-height:20px;color:#111827;padding:0"><b>UEI:</b> VA4LAHDJT2R3&nbsp;&nbsp;|&nbsp;&nbsp;<b>CAGE:</b> 9V3J1</td></tr>
+<tr><td style="${F}font-size:14px;line-height:20px;padding:0 0 12px 0"><a href="https://emprise-partners.com" style="color:#0c52ac;text-decoration:underline">emprise-partners.com</a></td></tr>
+<tr><td style="padding:0"><a href="https://emprise-partners.com"><img src="${LOGO}" width="150" height="40" alt="Emprise Partners" style="display:block;border:0;width:150px;height:40px"></a></td></tr>
+</table>`;
+ }
+ function text() {
+  const ext = val('ext').replace(/\D/g,''), cell = fmtCell(val('cell'));
+  return [val('name') || 'First Last', val('title') || 'Title', 'Emprise Partners', '',
+   'Office: ' + OFFICE + (ext ? ' ext. ' + ext : ''), cell ? 'Cell: ' + cell : null,
+   'UEI: VA4LAHDJT2R3 | CAGE: 9V3J1', 'emprise-partners.com'].filter(x => x !== null).join('\n');
+ }
+ const render = () => { $('preview').innerHTML = html(); };
+ for (const k of ['name','title','ext','cell']) $(k).addEventListener('input', render);
+ render();
+
+ const say = m => { $('msg').textContent = m; };
+ function selectPreview() { const r = document.createRange(); r.selectNodeContents($('preview')); const s = getSelection(); s.removeAllRanges(); s.addRange(r); return s; }
+ $('copy').addEventListener('click', async () => {
+  try {
+   await navigator.clipboard.write([new ClipboardItem({ 'text/html': new Blob([html()], {type:'text/html'}), 'text/plain': new Blob([text()], {type:'text/plain'}) })]);
+   say('Copied. Now paste it into Outlook (Cmd+V on Mac, Ctrl+V on PC).');
+  } catch (e) {
+   const s = selectPreview(); const ok = document.execCommand('copy'); s.removeAllRanges();
+   say(ok ? 'Copied. Now paste it into Outlook.' : 'Copy was blocked. Click in the preview, select all, and copy.');
+  }
+ });
+ $('copytext').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(text()); say('Phone version copied. Paste it into Outlook on your iPhone.'); }
+  catch (e) { say('Copy was blocked. Select the text manually.'); }
+ });
+}
+</script>
+</body>
+</html>
