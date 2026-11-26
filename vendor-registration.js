@@ -38,12 +38,12 @@
       if (trade.value === 'Other') data.set('trade', other.value.trim());
       data.delete('other_trade');
       for (const name of ['insurance_expires_on', 'license_expires_on']) data.set(name, isoDate(String(data.get(name) || '').trim()));
-      const minimums = { w9: 1, insurance: 1, license: 0, reference: 3 };
-      const maximums = { w9: 3, insurance: 3, license: 6, reference: 5 };
+      const minimums = { w9: 1, insurance: 1, license: 0, reference: 1 };
+      const maximums = { w9: 3, insurance: 3, license: 6, reference: 3 };
       let total = 0;
       for (const kind of Object.keys(minimums)) {
         const files = Array.from(form.elements.namedItem(`files_${kind}`).files);
-        if (files.length < minimums[kind] || files.length > maximums[kind]) throw new Error(kind === 'reference' ? 'Upload three to five reference files.' : `Check the number of ${kind} files.`);
+        if (files.length < minimums[kind] || files.length > maximums[kind]) throw new Error(kind === 'reference' ? (files.length < minimums[kind] ? 'Upload your past performance / references.' : 'Upload at most 3 past performance / reference files.') : `Check the number of ${kind} files.`);
         if (kind === 'license' && files.length && !data.get('license_expires_on')) throw new Error('Enter the license expiration date.');
         for (const file of files) {
           if (!['application/pdf', 'image/jpeg', 'image/png'].includes(file.type) || !file.size || file.size > 10 * 1024 * 1024) throw new Error('Each file must be a PDF, JPG or PNG, up to 10 MB.');

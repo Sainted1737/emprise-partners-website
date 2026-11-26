@@ -15,3 +15,4 @@
 .registration-upload { border-top: 1px solid var(--registration-line); padding-top: 18px; margin-top: 18px; }
 #registration-error { color: var(--registration-error); }
 @media (max-width: 600px) { .registration-wrap .row { display: block; } }
+.registration-hint { font-size: 14px; color: #555f6d; margin: -8px 0 0; }

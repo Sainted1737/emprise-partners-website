@@ -19,7 +19,7 @@
   <main class="registration-wrap">
     <a href="/" class="registration-brand">Emprise Partners</a>
     <h1>Vendor partner registration</h1>
-    <p>Submit your company details, W-9, insurance, applicable licenses and three to five references.</p>
+    <p>Submit your company details, W-9, insurance, applicable licenses and your past performance / references.</p>
     <div id="registration-unavailable" hidden>This registration link is not recognised. Please open the link in your invitation email or contact <a href="mailto:info@emprise-partners.com">info@emprise-partners.com</a>.</div>
     <form id="vendor-registration" hidden>
       <div class="row">
@@ -41,7 +41,7 @@
       <div class="registration-upload"><label>W-9<input name="files_w9" type="file" accept="application/pdf,image/jpeg,image/png" multiple required></label></div>
       <div class="registration-upload"><label>Current insurance certificate<input name="files_insurance" type="file" accept="application/pdf,image/jpeg,image/png" multiple required></label><label>Insurance expiration date (MM.DD.YYYY)<input name="insurance_expires_on" required placeholder="04.30.2027" inputmode="numeric" pattern="\d{2}\.\d{2}\.\d{4}" maxlength="10"></label></div>
       <div class="registration-upload"><label>Applicable licenses<input name="files_license" type="file" accept="application/pdf,image/jpeg,image/png" multiple></label><label>License expiration date (MM.DD.YYYY)<input name="license_expires_on" placeholder="04.30.2027" inputmode="numeric" pattern="\d{2}\.\d{2}\.\d{4}" maxlength="10"></label></div>
-      <div class="registration-upload"><label>Past performance / references (3–5 files)<input name="files_reference" type="file" accept="application/pdf,image/jpeg,image/png" multiple required></label></div>
+      <div class="registration-upload"><label>Past performance / references<input name="files_reference" type="file" accept="application/pdf,image/jpeg,image/png" multiple required></label><p class="registration-hint">One document listing your past projects and references is fine. Up to 3 files.</p></div>
       <p id="registration-error" role="alert" hidden></p>
       <button class="btn pri" type="submit">Submit registration</button>
     </form>
