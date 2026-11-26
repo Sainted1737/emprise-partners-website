@@ -44,8 +44,9 @@
    const fd = new FormData(f);
    const data = Object.fromEntries(fd);
    delete data.website;
-   if (data.trade === 'Other' && data.trade_other) data.trade = 'Other: ' + data.trade_other.trim();
-   else delete data.trade_other;
+   // Your app expects trade "Other" plus the typed service in other_trade.
+   if (data.trade === 'Other') data.other_trade = (data.other_trade || '').trim();
+   else delete data.other_trade;
    data.consent = fd.has('consent');
    data.form = f.dataset.form;                 // "vendor" or "inquiry"
    data.submitted_at = new Date().toISOString();
