@@ -23,13 +23,19 @@
  }
 
  // Form submission
+ const loadedAt = Date.now();
  for (const f of document.querySelectorAll('form[data-form]')) {
   f.addEventListener('submit', async e => {
    e.preventDefault();
    const ok = f.querySelector('.ok'), btn = f.querySelector('button[type=submit]');
    if (!f.checkValidity()) { f.reportValidity(); return; }
+   // Spam trap: bots fill the hidden "website" field or submit instantly; pretend success and drop it.
+   if ((f.querySelector('[name=website]')?.value || '') !== '' || Date.now() - loadedAt < 3000) {
+    ok.textContent = 'Thank you. Emprise Partners will be in touch within one business day.'; ok.classList.add('show'); f.reset(); return;
+   }
    const fd = new FormData(f);
    const data = Object.fromEntries(fd);
+   delete data.website;
    data.consent = fd.has('consent');
    data.form = f.dataset.form;                 // "vendor" or "inquiry"
    data.submitted_at = new Date().toISOString();

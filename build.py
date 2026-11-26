@@ -90,7 +90,7 @@ FOOTER = f'''</main>
    <div><h4>Work with us</h4><ul><li><a href="partners.html">Trade partners</a></li><li><a href="services.html#commercial">Commercial</a></li><li><a href="contact.html#faq">FAQ</a></li><li><a href="Emprise_Partners_Capability_Statement.pdf" target="_blank" rel="noopener">Capability statement</a></li></ul></div>
    <div><h4>Contact</h4><ul><li>800.254.0658 (toll-free)</li><li>321.414.8926 (local)</li><li>info@emprise-partners.com</li><li>555 Winderley Place, Suite 300<br>Maitland, FL 32751</li></ul></div>
   </div>
-  <div class="legal"><span>© 2026 Emprise Partners LLC. All rights reserved.</span><span><a href="#">Privacy</a> · <a href="#">Terms</a></span></div>
+  <div class="legal"><span>© 2026 Emprise Partners LLC. All rights reserved.</span><span><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a></span></div>
  </div>
 </footer>
 <script src="site.js"></script>
@@ -147,10 +147,9 @@ home = f'''<section class="hero" aria-label="Introduction">
  <div class="wrap">
   <h2>One partner. Multiple services. Consistent accountability.</h2>
   <div class="facts">
-   <div><b>2021</b><span>In business since</span></div>
-   <div><b>Multi-state</b><span>Federal contract performance</span></div>
-   <div><b style="white-space:nowrap;font-size:clamp(26px,2.6vw,34px)">FL · TX · GA</b><span>Local, county and commercial work</span></div>
+   <div class="wide"><b>Nationwide</b><span>Federal, state, local and commercial work across the United States</span></div>
    <div><b>6</b><span>Core service lines</span></div>
+   <div><b>1</b><span>Point of contact per contract</span></div>
   </div>
  </div>
 </section>
@@ -186,13 +185,13 @@ page('index.html', '', 'Emprise Partners | Facility Support & Site Services',
      'Emprise Partners is a prime contractor providing facility support and site services to municipal, county, state and federal agencies.', home)
 
 # ---------- ABOUT ----------
-about = phero('about', 'About Emprise Partners', 'A prime contractor for facility support and site services, founded in Florida in 2021.') + f'''
+about = phero('about', 'About Emprise Partners', 'A prime contractor for facility support and site services, serving clients nationwide.') + f'''
 <section class="band about">
  <div class="wrap">
   <div class="two">
    <div class="story">
     <h2>One accountable prime contractor</h2>
-    <p>Emprise Partners LLC is a facility support and site services company headquartered in Maitland, Florida. Since 2021, we've performed federal contracts in multiple states, and we serve local, county and commercial clients in Florida, Texas and Georgia.</p>
+    <p>Emprise Partners LLC is a facility support and site services company headquartered in Maitland, Florida, serving federal, state, local and commercial clients across the United States.</p>
     <p>We hold the contract and oversee every job, supported by a vetted network of trade partners. Instead of managing multiple vendors, relationships and agreements, our clients work with one accountable prime contractor.</p>
     <p>Our mission is to deliver reliable service, create strong partnerships, and give our clients confidence that their facilities are cared for, no matter the service or location.</p>
    </div>
@@ -300,10 +299,11 @@ partners = phero('infrastructure', 'Become a trade partner', 'Steady public-sect
   <div>
    <h2>Partner interest form</h2>
    <form data-form="vendor" novalidate>
+<div class="hp" aria-hidden="true"><label>Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
     <div class="row"><label>Company name<input name="company" required autocomplete="organization"></label><label>Contact name<input name="name" required autocomplete="name"></label></div>
     <div class="row"><label>Email<input name="email" type="email" required autocomplete="email"></label><label>Phone<input name="phone" type="tel" autocomplete="tel"></label></div>
     <div class="row"><label>Primary trade<select name="trade" required><option value="">Choose one</option>{''.join(f"<option>{t}</option>" for _, t, _, _, _ in SERVICES)}</select></label><label>Service area<input name="area" placeholder="Counties or states" required></label></div>
-    <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Emprise Partners may contact me about partnership opportunities.</span></label>
+    <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Emprise Partners may contact me about partnership opportunities. See our <a href="privacy.html">Privacy Policy</a>.</span></label>
     <button class="btn pri" type="submit">Submit partner interest</button>
     <div class="ok" role="status"></div>
    </form>
@@ -314,7 +314,7 @@ partners = phero('infrastructure', 'Become a trade partner', 'Steady public-sect
 <section class="band alt">
  <div class="wrap">
   <h2>Trades we're recruiting</h2>
-  <p class="lede">Florida, Texas and Georgia for local, county and commercial work, and nationwide for federal contracts.</p>
+  <p class="lede">Nationwide, for federal, state, local and commercial work across the United States.</p>
   <div class="trades">{trades}</div>
  </div>
 </section>
@@ -336,11 +336,12 @@ contact = phero('about', 'Contact Emprise Partners', 'Contracting officers, proc
    </div>
   </div>
   <form data-form="inquiry" novalidate style="margin-top:0">
+<div class="hp" aria-hidden="true"><label>Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
    <div class="row"><label>Name<input name="name" required autocomplete="name"></label><label>Organization<input name="org" required autocomplete="organization"></label></div>
    <div class="row"><label>Email<input name="email" type="email" required autocomplete="email"></label><label>I'm with<select name="type" required><option value="">Choose one</option><option>Government agency</option><option>Commercial / private</option><option>Prime contractor (teaming)</option><option>Other</option></select></label></div>
    <label>Service of interest<select name="service"><option value="">Choose one</option>{''.join(f"<option>{t}</option>" for _, t, _, _, _ in SERVICES)}<option>Multiple services</option><option>Other</option></select></label>
    <label>How can we help?<textarea name="message" required placeholder="Solicitation number, scope, location or timeline"></textarea></label>
-   <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Emprise Partners may contact me about this inquiry.</span></label>
+   <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Emprise Partners may contact me about this inquiry. See our <a href="privacy.html">Privacy Policy</a>.</span></label>
    <button class="btn pri" type="submit">Send inquiry</button>
    <div class="ok" role="status"></div>
   </form>
@@ -352,9 +353,9 @@ contact = phero('about', 'Contact Emprise Partners', 'Contracting officers, proc
   <div><h2>Frequently asked questions</h2></div>
   <div class="faq">
    <details><summary>What does Emprise Partners do?</summary><p>Emprise Partners is a facility support and site services company. We hold the contract and oversee every job, supported by a vetted network of trade partners.</p></details>
-   <details><summary>How is your model different from hiring individual vendors?</summary><p>Instead of managing many contracts, invoices and relationships, you work with one accountable prime contractor. Emprise Partners handles contract management, compliance, communication, quality assurance and performance management.</p></details>
+   <details><summary>How is your model different from hiring individual vendors?</summary><p>Instead of managing multiple contracts, invoices and relationships, you work with one accountable prime contractor. Emprise Partners handles contract management, compliance, communication, quality assurance and performance management.</p></details>
    <details><summary>Who do you work with?</summary><p>Federal, state and local government agencies, along with commercial clients such as property management companies and multi-location operators.</p></details>
-   <details><summary>Where are you located and what areas do you serve?</summary><p>We're headquartered in Maitland, Florida. We perform federal contracts in multiple states and serve local, county and commercial clients in Florida, Texas and Georgia.</p></details>
+   <details><summary>Where are you located and what areas do you serve?</summary><p>We're headquartered in Maitland, Florida, and serve federal, state, local and commercial clients across the United States.</p></details>
    <details><summary>How do you ensure quality and compliance?</summary><p>Emprise Partners sets the standards, supervises the work and inspects the results. Every trade partner is vetted for qualifications, licensing and insurance, and we maintain the documentation so you have one point of oversight.</p></details>
    <details><summary>How do I request a proposal?</summary><p>Use the form on this page, email info@emprise-partners.com, or call 800.254.0658. We'll review your needs and follow up to scope the right service program.</p></details>
   </div>
@@ -362,4 +363,55 @@ contact = phero('about', 'Contact Emprise Partners', 'Contracting officers, proc
 </section>
 '''
 page('contact.html', 'contact.html', 'Contact | Emprise Partners', 'Contact Emprise Partners: 800.254.0658, info@emprise-partners.com, Maitland, Florida.', contact)
+
+# ---------- PRIVACY / TERMS ----------
+PRIVACY = phero('government', 'Privacy Policy', 'How Emprise Partners collects, uses and protects information.') + '''
+<section class="band"><div class="wrap prose">
+<p><b>Effective date:</b> November 2026</p>
+<p>Emprise Partners LLC ("Emprise Partners," "we," "us") respects your privacy. This policy explains how we collect, use and protect information when you visit our website or contact us.</p>
+<h2>Information we collect</h2>
+<p>When you contact us through this website, we may collect your name, organization, email address, phone number, and any details you choose to share about your service needs. When a company submits our trade partner form, we may also collect its company name, primary trade and service area. We may also collect basic technical information, such as browser type and pages visited, to help us improve the website.</p>
+<h2>How we use information</h2>
+<p>We use the information you provide to respond to inquiries, prepare proposals, evaluate and onboard trade partners, deliver and manage services, communicate about contracts, and improve our website and operations. We do not sell your personal information.</p>
+<h2>Sharing of information</h2>
+<p>We may share information with qualified trade partners only as needed to scope or deliver services you have requested, with service providers who support our business operations (such as website hosting and the system we use to receive form submissions), or when required by law or government contracting requirements.</p>
+<h2>Data security</h2>
+<p>We use reasonable administrative, technical and physical safeguards to protect the information we collect. No method of transmission or storage is completely secure, but we work to protect your information.</p>
+<h2>Cookies and third-party services</h2>
+<p>This website may use cookies or similar technologies to understand how visitors use the site. You can disable cookies through your browser settings. The website also loads fonts from Google Fonts, which may receive your device's IP address when a page loads.</p>
+<h2>Your choices</h2>
+<p>You may request access to, correction of, or deletion of the personal information you have provided to us by contacting us using the details below.</p>
+<h2>Changes to this policy</h2>
+<p>We may update this Privacy Policy from time to time. Updates will be posted on this page with a revised effective date.</p>
+<h2>Contact us</h2>
+<p>Emprise Partners LLC<br>555 Winderley Place, Suite 300, Maitland, FL 32751<br>info@emprise-partners.com · 800.254.0658</p>
+</div></section>
+'''
+page('privacy.html', '', 'Privacy Policy | Emprise Partners', 'Emprise Partners privacy policy.', PRIVACY)
+
+TERMS = phero('government', 'Terms of Use', 'The terms that apply when you use the Emprise Partners website.') + '''
+<section class="band"><div class="wrap prose">
+<p><b>Effective date:</b> November 2026</p>
+<p>By using emprise-partners.com (the "website"), you agree to these Terms of Use. If you do not agree, please do not use the website.</p>
+<h2>Purpose of this website</h2>
+<p>The website provides general information about Emprise Partners LLC and its services. Content on the website is for informational purposes only and is not an offer, bid, proposal or contract. Any work is governed solely by a written agreement or contract signed by Emprise Partners.</p>
+<h2>Information you submit</h2>
+<p>When you submit a form, you confirm that the information is accurate and that you are authorized to share it. Submitting the trade partner form does not create a subcontract, guarantee work, or obligate either party. Submitting an inquiry does not create a contract. We handle submitted information as described in our <a href="privacy.html">Privacy Policy</a>.</p>
+<h2>Intellectual property</h2>
+<p>The Emprise Partners name, logo and website content are owned by or licensed to Emprise Partners LLC. You may not copy, reproduce or use them without our written permission, except to share links to the website or to review our capability statement for procurement purposes.</p>
+<h2>Accuracy of information</h2>
+<p>We work to keep the website accurate and current, but information may change without notice. Contracting details, certifications and past performance should be confirmed directly with us or through official sources such as SAM.gov.</p>
+<h2>Links to other websites</h2>
+<p>The website may link to third-party websites. We are not responsible for their content or practices.</p>
+<h2>Disclaimer and limitation of liability</h2>
+<p>The website is provided "as is" without warranties of any kind. To the fullest extent permitted by law, Emprise Partners LLC is not liable for any damages arising from your use of, or inability to use, the website.</p>
+<h2>Governing law</h2>
+<p>These Terms of Use are governed by the laws of the State of Florida.</p>
+<h2>Changes to these terms</h2>
+<p>We may update these Terms of Use from time to time. Updates will be posted on this page with a revised effective date.</p>
+<h2>Contact us</h2>
+<p>Emprise Partners LLC<br>555 Winderley Place, Suite 300, Maitland, FL 32751<br>info@emprise-partners.com · 800.254.0658</p>
+</div></section>
+'''
+page('terms.html', '', 'Terms of Use | Emprise Partners', 'Emprise Partners website terms of use.', TERMS)
 print('built')

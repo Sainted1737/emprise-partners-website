@@ -241,3 +241,11 @@ footer .logo{color:#fff}
  .links.open a{display:flex;align-items:center;min-height:52px;box-shadow:none}
  .links.open a[aria-current=page]{color:light-dark(var(--blue),#8fb9f0);font-weight:600}
 }
+/* legal pages */
+.prose{max-width:760px}
+.prose h2{font-size:26px;font-weight:400;margin:36px 0 10px}
+.prose p{color:var(--mute);margin:0 0 14px;font-size:16.5px}
+.prose p b{color:var(--ink)}
+.consent a{color:inherit;text-decoration:underline}
+.hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
+.facts .wide{grid-column:1/-1;padding-right:0}
