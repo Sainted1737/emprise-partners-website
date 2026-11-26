@@ -302,7 +302,8 @@ partners = phero('infrastructure', 'Become a trade partner', 'Steady public-sect
 <div class="hp" aria-hidden="true"><label>Leave this field empty<input name="website" tabindex="-1" autocomplete="off"></label></div>
     <div class="row"><label>Company name<input name="company" required autocomplete="organization"></label><label>Contact name<input name="name" required autocomplete="name"></label></div>
     <div class="row"><label>Email<input name="email" type="email" required autocomplete="email"></label><label>Phone<input name="phone" type="tel" autocomplete="tel"></label></div>
-    <div class="row"><label>Primary trade<select name="trade" required><option value="">Choose one</option>{''.join(f"<option>{t}</option>" for _, t, _, _, _ in SERVICES)}</select></label><label>Service area<input name="area" placeholder="Counties or states" required></label></div>
+    <div class="row"><label>Primary trade<select name="trade" required><option value="">Choose one</option>{''.join(f"<option>{t}</option>" for _, t, _, _, _ in SERVICES)}<option>Other</option></select></label><label>Service area<input name="area" placeholder="Counties or states" required></label></div>
+    <label class="other-trade" hidden>Your service<input name="trade_other" placeholder="Describe the service you provide" maxlength="120"></label>
     <label class="consent"><input type="checkbox" name="consent" required><span>I agree that Emprise Partners may contact me about partnership opportunities. See our <a href="privacy.html">Privacy Policy</a>.</span></label>
     <button class="btn pri" type="submit">Submit partner interest</button>
     <div class="ok" role="status"></div>

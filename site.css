@@ -249,3 +249,4 @@ footer .logo{color:#fff}
 .consent a{color:inherit;text-decoration:underline}
 .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .facts .wide{grid-column:1/-1;padding-right:0}
+.other-trade[hidden]{display:none}

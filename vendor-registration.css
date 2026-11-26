@@ -1,0 +1,17 @@
+:root { color-scheme: light; } /* keeps the page readable when a visitor uses dark mode */
+:root {
+  --registration-brand: #0b53a8;
+  --registration-ink: #111827;
+  --registration-line: #dce2e9;
+  --registration-error: #b42318;
+}
+[hidden] { display: none !important; }
+.registration-wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px; color: var(--registration-ink); }
+.registration-brand { color: var(--registration-brand); font-weight: 700; display: inline-block; margin-bottom: 24px; }
+.registration-wrap h1 { font-size: 28px; }
+.registration-wrap h2 { font-size: 22px; margin-top: 28px; }
+.registration-wrap label { display: block; margin-bottom: 16px; }
+.registration-wrap input, .registration-wrap select, .registration-wrap textarea { width: 100%; box-sizing: border-box; margin-top: 6px; }
+.registration-upload { border-top: 1px solid var(--registration-line); padding-top: 18px; margin-top: 18px; }
+#registration-error { color: var(--registration-error); }
+@media (max-width: 600px) { .registration-wrap .row { display: block; } }

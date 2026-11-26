@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="referrer" content="no-referrer">
+  <title>Vendor registration | Emprise Partners</title>
+  <meta name="description" content="Submit company details and private registration documents to Emprise Partners.">
+  <meta property="og:title" content="Vendor registration | Emprise Partners">
+  <meta property="og:description" content="Complete your Emprise Partners vendor registration.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="/site.css">
+  <link rel="stylesheet" href="/vendor-registration.css">
+  <script src="/vendor-registration.js" defer></script>
+</head>
+<body>
+  <main class="registration-wrap">
+    <a href="/" class="registration-brand">Emprise Partners</a>
+    <h1>Vendor partner registration</h1>
+    <p>Submit your company details, W-9, insurance, applicable licenses and three to five references.</p>
+    <div id="registration-unavailable" hidden>This registration link is not recognised. Please open the link in your invitation email or contact <a href="mailto:info@emprise-partners.com">info@emprise-partners.com</a>.</div>
+    <form id="vendor-registration" hidden>
+      <div class="row">
+        <label>Company name<input name="company" required maxlength="300" autocomplete="organization"></label>
+        <label>Your name<input name="contact_name" required maxlength="300" autocomplete="name"></label>
+      </div>
+      <div class="row">
+        <label>Email<input name="email" type="email" required maxlength="300" autocomplete="email"></label>
+        <label>Phone<input name="phone" type="tel" maxlength="100" autocomplete="tel"></label>
+      </div>
+      <div class="row">
+        <label>Main trade<select name="trade" required><option value="">Choose your trade</option><option>Janitorial &amp; Custodial</option><option>Landscaping &amp; Grounds</option><option>Building Systems &amp; Trades</option><option>Life Safety &amp; Pest Control</option><option>Waste &amp; Sanitation</option><option>Security &amp; Specialty</option><option>Other</option></select></label>
+        <label>Service area<input name="service_area" required maxlength="2000" placeholder="Counties or states"></label>
+      </div>
+      <div id="registration-other" hidden><label>Service you provide<input name="other_trade" maxlength="200" disabled></label></div>
+      <label>Anything we should know?<textarea name="notes" maxlength="8000" rows="3"></textarea></label>
+      <h2>Your documents</h2>
+      <p>PDF, JPG or PNG. Up to 10 MB per file, twelve files in total.</p>
+      <div class="registration-upload"><label>W-9<input name="files_w9" type="file" accept="application/pdf,image/jpeg,image/png" multiple required></label></div>
+      <div class="registration-upload"><label>Current insurance certificate<input name="files_insurance" type="file" accept="application/pdf,image/jpeg,image/png" multiple required></label><label>Insurance expiration date (MM.DD.YYYY)<input name="insurance_expires_on" required placeholder="04.30.2027" inputmode="numeric" pattern="\d{2}\.\d{2}\.\d{4}" maxlength="10"></label></div>
+      <div class="registration-upload"><label>Applicable licenses<input name="files_license" type="file" accept="application/pdf,image/jpeg,image/png" multiple></label><label>License expiration date (MM.DD.YYYY)<input name="license_expires_on" placeholder="04.30.2027" inputmode="numeric" pattern="\d{2}\.\d{2}\.\d{4}" maxlength="10"></label></div>
+      <div class="registration-upload"><label>Past performance / references (3–5 files)<input name="files_reference" type="file" accept="application/pdf,image/jpeg,image/png" multiple required></label></div>
+      <p id="registration-error" role="alert" hidden></p>
+      <button class="btn pri" type="submit">Submit registration</button>
+    </form>
+    <section id="registration-complete" hidden role="status"><h2>Thank you — your registration is in</h2><p>We received your details and documents. Your company is now in our vendor network, and a confirmation is on its way to your inbox.</p></section>
+    <p>Questions? Call 800.254.0658 or email <a href="mailto:info@emprise-partners.com">info@emprise-partners.com</a>.</p>
+  </main>
+</body>
+</html>

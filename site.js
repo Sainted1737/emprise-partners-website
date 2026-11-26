@@ -22,6 +22,14 @@
   links.addEventListener('click', e => { if (e.target.tagName === 'A') { links.classList.remove('open'); menu.setAttribute('aria-expanded', false); } });
  }
 
+ // Vendor form: "Other" trade reveals a required "Your service" field.
+ for (const sel of document.querySelectorAll('select[name=trade]')) {
+  const box = sel.form.querySelector('.other-trade'), inp = box && box.querySelector('input');
+  if (!box) continue;
+  const sync = () => { const on = sel.value === 'Other'; box.hidden = !on; inp.required = on; if (!on) inp.value = ''; };
+  sel.addEventListener('change', sync); sel.form.addEventListener('reset', () => setTimeout(sync)); sync();
+ }
+
  // Form submission
  const loadedAt = Date.now();
  for (const f of document.querySelectorAll('form[data-form]')) {
@@ -36,6 +44,8 @@
    const fd = new FormData(f);
    const data = Object.fromEntries(fd);
    delete data.website;
+   if (data.trade === 'Other' && data.trade_other) data.trade = 'Other: ' + data.trade_other.trim();
+   else delete data.trade_other;
    data.consent = fd.has('consent');
    data.form = f.dataset.form;                 // "vendor" or "inquiry"
    data.submitted_at = new Date().toISOString();
