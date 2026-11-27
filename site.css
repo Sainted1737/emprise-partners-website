@@ -254,3 +254,10 @@ footer .logo{color:#fff}
 .logo img{display:block;height:52px;width:auto}
 @media(max-width:560px){.logo img{height:44px}}
 label .opt{font-weight:400;color:var(--mute)}
+/* mobile readability: text spans the full width on phones, so darken the whole photo behind it */
+@media(max-width:760px){
+ .hero::before{background:linear-gradient(0deg,#060b14f2 0%,#060b14d9 45%,#060b14a6 75%,#060b1466 100%)}
+ .phero::before{background:linear-gradient(0deg,#060b14eb 0%,#060b14bf 60%,#060b148c 100%)}
+ .hero p,.phero p{font-weight:400;color:#fff}
+ .hero h1,.hero p,.phero h1,.phero p{text-shadow:0 1px 12px #000a}
+}
