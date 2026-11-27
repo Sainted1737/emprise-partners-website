@@ -129,8 +129,8 @@ tiles = ''.join(f'<article class="tile"><img src="photo-{img}.jpg" alt="" loadin
                 for sid, t, img, d, _ in SERVICES)
 home = f'''<section class="hero" aria-label="Introduction">
  <div class="wrap">
-  <h1>Facility support and site services for the public sector.</h1>
-  <p>Emprise Partners primes municipal, county, state and federal contracts, delivered by a vetted network of trade partners in the field.</p>
+  <h1>Facility support and site services for public and commercial clients.</h1>
+  <p>Emprise Partners primes federal, state, local and commercial contracts, delivered by a vetted network of trade partners in the field.</p>
   <div class="ctas">
    <a class="btn pri" href="Emprise_Partners_Capability_Statement.pdf" target="_blank" rel="noopener">Capability statement</a>
    <a class="btn line" href="partners.html">Become a trade partner</a>
@@ -177,7 +177,7 @@ home = f'''<section class="hero" aria-label="Introduction">
 </section>
 ''' + CTA
 page('index.html', '', 'Emprise Partners | Facility Support & Site Services',
-     'Emprise Partners is a prime contractor providing facility support and site services to municipal, county, state and federal agencies.', home)
+     'Emprise Partners is a prime contractor providing facility support and site services to federal, state, local and commercial clients nationwide.', home)
 
 # ---------- ABOUT ----------
 about = phero('about', 'About Emprise Partners', 'A prime contractor for facility support and site services, serving clients nationwide.') + f'''

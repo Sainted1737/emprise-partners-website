@@ -58,7 +58,11 @@
    btn.disabled = true;
    try {
     const r = await fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', ...FORM_HEADERS }, body: JSON.stringify(data) });
-    if (!r.ok) throw new Error(r.status);
+    if (!r.ok) {
+     const j = await r.json().catch(() => null);
+     if (r.status === 400 && j && j.error) { show(j.error); return; }
+     throw new Error(r.status);
+    }
     show('Thank you. Emprise Partners will be in touch soon.');
     f.reset();
    } catch (err) {
