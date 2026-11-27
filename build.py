@@ -64,7 +64,7 @@ def header(cur):
     links = '\n'.join(f'   <a href="{h}"{" aria-current=\"page\"" if h == cur else ""}>{t}</a>' for h, t in NAV)
     return f'''<header>
  <nav class="nav" aria-label="Main">
-  <a class="logo" href="index.html" aria-label="Emprise Partners home">{MARK.format(id="mkA")}</a>
+  <a class="logo" href="index.html" aria-label="Emprise Partners home"><picture><source srcset="logo-light.png" media="(prefers-color-scheme: dark)"><img src="logo-dark.png" alt="Emprise Partners" width="175" height="44"></picture></a>
   <div class="links" id="links">
 {links}
   </div>
@@ -82,7 +82,7 @@ FOOTER = f'''</main>
  <div class="wrap">
   <div class="foot">
    <div>
-    <a class="logo" href="index.html">{MARK.format(id="mkB")}</a>
+    <a class="logo" href="index.html"><img src="logo-light.png" alt="Emprise Partners" width="175" height="44"></a>
     <p style="margin-top:16px;max-width:40ch">Facility support and site services for government, commercial and institutional clients.</p>
     <p style="margin-top:14px;font-size:13px">UEI {UEI} · CAGE {CAGE} · NAICS {NAICS}</p>
    </div>

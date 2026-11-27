@@ -250,3 +250,6 @@ footer .logo{color:#fff}
 .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}
 .facts .wide{grid-column:1/-1;padding-right:0}
 .other-trade[hidden]{display:none}
+/* real logo artwork */
+.logo img{display:block;height:52px;width:auto}
+@media(max-width:560px){.logo img{height:44px}}
