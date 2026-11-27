@@ -158,7 +158,7 @@ home = f'''<section class="hero" aria-label="Introduction">
 
 <section class="band alt">
  <div class="wrap">
-  <div class="head"><div><h2>A few of our completed projects</h2><p class="lede">Recent work for municipal and federal clients.</p></div><a class="more" href="past-performance.html">All past performance</a></div>
+  <div class="head"><div><h2>Our most recent completed projects</h2><p class="lede">Recent work for federal and municipal clients.</p></div><a class="more" href="past-performance.html">View more past performance</a></div>
   {proj_cards(PROJECTS[:4])}
  </div>
 </section>
@@ -202,7 +202,7 @@ about = phero('about', 'About Emprise Partners', 'A prime contractor for facilit
    <p class="lede">Emprise Partners sets the standards, coordinates the work and inspects the results, with one line of communication for every property.</p>
   </div>
   <ol class="steps">
-   <li><div><h3>One point of accountability</h3><p>One relationship and one contract across every service you need, with centralized contract administration and a single invoice.</p></div></li>
+   <li><div><h3>One point of accountability</h3><p>One relationship across every service you need, with centralized contract administration and invoicing.</p></div></li>
    <li><div><h3>Oversight and supervision</h3><p>We assign each scope to a qualified partner, set the schedule and standards, and supervise the work through completion.</p></div></li>
    <li><div><h3>Compliance</h3><p>Insurance, licensing and documentation tracked and verified for every partner before they set foot on site.</p></div></li>
    <li><div><h3>Quality assurance</h3><p>Inspections and reporting hold every job to the same standard, at every location.</p></div></li>
@@ -236,7 +236,7 @@ services = phero('facility', 'Services', 'Six core service lines, all managed th
 <section class="band comm" id="commercial">
  <div class="wrap">
   <h2>Commercial facility services</h2>
-  <p class="lede">The same model for property managers, office operators and private facility owners who want one reliable vendor across their portfolio.</p>
+  <p class="lede">The same model for property managers, office operators and private facility owners who want one accountable partner across their portfolio.</p>
   <div class="cols">
    <div><h3>Office and workspace</h3><p>Janitorial, minor repairs and recurring maintenance for multi-site operators.</p></div>
    <div><h3>Property portfolios</h3><p>Grounds, pressure washing and exterior care, scheduled and reported across locations.</p></div>
@@ -248,11 +248,11 @@ services = phero('facility', 'Services', 'Six core service lines, all managed th
 page('services.html', 'services.html', 'Services | Emprise Partners', 'Janitorial, grounds, building trades, life safety, waste and specialty services from Emprise Partners.', services)
 
 # ---------- PAST PERFORMANCE ----------
-pp = phero('government', 'Past performance', 'Recent work for municipal and federal clients, delivered under one accountable prime contract.') + f'''
+pp = phero('government', 'Past performance', 'Completed work for federal and municipal clients, delivered as the accountable prime contractor.') + f'''
 <section class="band">
  <div class="wrap">
-  <h2>A few of our completed projects</h2>
-  <p class="lede">A selection of recent work. References are available on request.</p>
+  <h2>Selected completed projects</h2>
+  <p class="lede">A selection of our completed work. References are available on request.</p>
   {proj_cards(PROJECTS).replace('class="projects"','class="projects list"',1)}
  </div>
 </section>
@@ -273,7 +273,7 @@ page('past-performance.html', 'past-performance.html', 'Past Performance | Empri
 
 # ---------- PARTNERS ----------
 trades = ''.join(f'<div><h3>{t}</h3><p>{items[0]}, {items[1][0].lower()+items[1][1:]}, {items[2][0].lower()+items[2][1:]}</p></div>' for _, t, _, _, items in SERVICES)
-partners = phero('infrastructure', 'Become a trade partner', 'Steady public-sector and commercial work for qualified trade partners, plus the past performance and support to grow.') + f'''
+partners = phero('infrastructure', 'Become a trade partner', 'Public-sector and commercial opportunities for qualified trade partners, plus the past performance and support to grow.') + f'''
 <section class="band">
  <div class="wrap two">
   <div>
@@ -287,7 +287,7 @@ partners = phero('infrastructure', 'Become a trade partner', 'Steady public-sect
    </ul>
    <ol class="steps" style="margin-top:32px">
     <li><div><h3>Submit your interest</h3><p>Tell us your trade, service area and contact details.</p></div></li>
-    <li><div><h3>Share your documents</h3><p>We collect your certificate of insurance, W-9 and licenses so you're ready when a contract is awarded.</p></div></li>
+    <li><div><h3>Share your documents</h3><p>We collect your W-9, insurance certificate, licenses and references so you're ready when a contract is awarded.</p></div></li>
     <li><div><h3>Get matched to scopes</h3><p>We bring you projects that fit your trade and location.</p></div></li>
    </ol>
   </div>
@@ -316,7 +316,7 @@ partners = phero('infrastructure', 'Become a trade partner', 'Steady public-sect
  </div>
 </section>
 '''
-page('partners.html', 'partners.html', 'Vendor Partners | Emprise Partners', 'Join the Emprise Partners trade partner network.', partners)
+page('partners.html', 'partners.html', 'Become a Trade Partner | Emprise Partners', 'Join the Emprise Partners trade partner network.', partners)
 
 # ---------- CONTACT ----------
 contact = phero('about', 'Contact Emprise Partners', 'Contracting officers, procurement teams and commercial clients: tell us what you need and we will be in touch soon.') + f'''
@@ -367,7 +367,7 @@ PRIVACY = phero('government', 'Privacy Policy', 'How Emprise Partners collects, 
 <p><b>Effective date:</b> November 2026</p>
 <p>Emprise Partners LLC ("Emprise Partners," "we," "us") respects your privacy. This policy explains how we collect, use and protect information when you visit our website or contact us.</p>
 <h2>Information we collect</h2>
-<p>When you contact us through this website, we may collect your name, organization, email address, phone number, and any details you choose to share about your service needs. When a company submits our trade partner form, we may also collect its company name, primary trade and service area. We may also collect basic technical information, such as browser type and pages visited, to help us improve the website.</p>
+<p>When you contact us through this website, we may collect your name, organization, email address, phone number, and any details you choose to share about your service needs. When a company submits our trade partner form or completes vendor registration, we may also collect its company name, website, primary trade, service area, and the documents it uploads, such as a W-9, insurance certificate, licenses and references. We may also collect basic technical information, such as browser type and pages visited, to help us improve the website.</p>
 <h2>How we use information</h2>
 <p>We use the information you provide to respond to inquiries, prepare proposals, evaluate and onboard trade partners, deliver and manage services, communicate about contracts, and improve our website and operations. We do not sell your personal information.</p>
 <h2>Sharing of information</h2>
