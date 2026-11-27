@@ -44,6 +44,7 @@
    const fd = new FormData(f);
    const data = Object.fromEntries(fd);
    delete data.website;
+   if (!(data.company_website || '').trim()) delete data.company_website; else data.company_website = data.company_website.trim();
    // Your app expects trade "Other" plus the typed service in other_trade.
    if (data.trade === 'Other') data.other_trade = (data.other_trade || '').trim();
    else delete data.other_trade;

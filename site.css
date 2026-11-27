@@ -253,3 +253,4 @@ footer .logo{color:#fff}
 /* real logo artwork */
 .logo img{display:block;height:52px;width:auto}
 @media(max-width:560px){.logo img{height:44px}}
+label .opt{font-weight:400;color:var(--mute)}

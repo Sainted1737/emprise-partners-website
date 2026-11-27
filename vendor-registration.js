@@ -37,6 +37,7 @@
       data.set('token', token);
       if (trade.value === 'Other') data.set('trade', other.value.trim());
       data.delete('other_trade');
+      if (!String(data.get('company_website') || '').trim()) data.delete('company_website');
       for (const name of ['insurance_expires_on', 'license_expires_on']) data.set(name, isoDate(String(data.get(name) || '').trim()));
       const minimums = { w9: 1, insurance: 1, license: 0, reference: 1 };
       const maximums = { w9: 3, insurance: 3, license: 6, reference: 3 };
