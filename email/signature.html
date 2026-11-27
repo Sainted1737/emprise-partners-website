@@ -78,6 +78,7 @@
 {
  const LOGO = 'https://emprise-partners.com/email/emprise-partners-logo.png';
  const OFFICE = '321.414.8926';
+ const GLOBE = 'https://emprise-partners.com/email/globe.png';
  const $ = id => document.getElementById(id);
  const esc = s => s.replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
  const val = id => $(id).value.trim();
@@ -99,7 +100,7 @@
 ${line('Office', OFFICE + (ext ? ' ext. ' + esc(ext) : ''))}
 ${cell ? line('Cell', esc(cell)) : ''}
 <tr><td style="${F}font-size:13px;line-height:20px;color:#111827;padding:0"><b>UEI:</b> VA4LAHDJT2R3&nbsp;&nbsp;|&nbsp;&nbsp;<b>CAGE:</b> 9V3J1</td></tr>
-<tr><td style="${F}font-size:14px;line-height:20px;padding:0 0 12px 0"><a href="https://emprise-partners.com" style="color:#0c52ac;text-decoration:underline">emprise-partners.com</a></td></tr>
+<tr><td style="${F}font-size:14px;line-height:20px;color:#111827;padding:0 0 12px 0"><b>Website:</b> <a href="https://emprise-partners.com" title="emprise-partners.com" style="text-decoration:none"><img src="${GLOBE}" width="16" height="16" alt="emprise-partners.com" style="width:16px;height:16px;border:0;vertical-align:-3px"></a></td></tr>
 <tr><td style="padding:0"><a href="https://emprise-partners.com"><img src="${LOGO}" width="150" height="40" alt="Emprise Partners" style="display:block;border:0;width:150px;height:40px"></a></td></tr>
 </table>`;
  }
@@ -107,7 +108,7 @@ ${cell ? line('Cell', esc(cell)) : ''}
   const ext = val('ext').replace(/\D/g,''), cell = fmtCell(val('cell'));
   return [val('name') || 'First Last', val('title') || 'Title', 'Emprise Partners', '',
    'Office: ' + OFFICE + (ext ? ' ext. ' + ext : ''), cell ? 'Cell: ' + cell : null,
-   'UEI: VA4LAHDJT2R3 | CAGE: 9V3J1', 'emprise-partners.com'].filter(x => x !== null).join('\n');
+   'UEI: VA4LAHDJT2R3 | CAGE: 9V3J1', 'Website: emprise-partners.com'].filter(x => x !== null).join('\n');
  }
  const render = () => { $('preview').innerHTML = html(); };
  for (const k of ['name','title','ext','cell']) $(k).addEventListener('input', render);
