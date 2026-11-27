@@ -191,7 +191,7 @@ about = phero('about', 'About Emprise Partners', 'A prime contractor for facilit
   <div class="two">
    <div class="story">
     <h2>One accountable prime contractor</h2>
-    <p>Emprise Partners LLC is a facility support and site services company headquartered in Maitland, Florida, serving federal, state, local and commercial clients across the United States.</p>
+    <p>Emprise Partners LLC is a prime contractor delivering facility support and site services to federal, state, local and commercial clients nationwide.</p>
     <p>We hold the contract and oversee every job, supported by a vetted network of trade partners. Instead of managing multiple vendors, relationships and agreements, our clients work with one accountable prime contractor.</p>
     <p>Our mission is to deliver reliable service, create strong partnerships, and give our clients confidence that their facilities are cared for, no matter the service or location.</p>
    </div>
@@ -223,7 +223,7 @@ about = phero('about', 'About Emprise Partners', 'A prime contractor for facilit
  </div>
 </section>
 ''' + CTA
-page('about.html', 'about.html', 'About | Emprise Partners', 'About Emprise Partners, a Florida-based prime contractor for facility support and site services.', about)
+page('about.html', 'about.html', 'About | Emprise Partners', 'About Emprise Partners, a nationwide prime contractor for facility support and site services.', about)
 
 # ---------- SERVICES ----------
 svc_rows = ''.join(f'''<div class="svc" id="{sid}">
