@@ -93,16 +93,16 @@
  function html() {
   const name = esc(val('name') || 'First Last'), title = esc(val('title') || 'Title');
   const ext = val('ext').replace(/\D/g,''), cell = fmtCell(val('cell'));
-  return `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;${F}">
-<tr><td style="padding:0 0 12px 0"><table cellpadding="0" cellspacing="0" border="0" width="300" style="border-collapse:collapse"><tr><td height="3" style="height:3px;line-height:3px;font-size:3px;background:#0c52ac">&nbsp;</td></tr></table></td></tr>
-<tr><td style="${F}font-size:16px;line-height:21px;font-weight:bold;color:#111827;padding:0">${name}</td></tr>
-<tr><td style="${F}font-size:14px;line-height:20px;color:#111827;padding:0 0 10px 0">${title}</td></tr>
+  const rows = `<tr><td style="${F}font-size:16px;line-height:21px;font-weight:bold;color:#111827;padding:0">${name}</td></tr>
+<tr><td style="${F}font-size:14px;line-height:20px;color:#111827;padding:0 0 8px 0">${title}</td></tr>
 ${line('Office', OFFICE + (ext ? ' ext. ' + esc(ext) : ''))}
 ${cell ? line('Cell', esc(cell)) : ''}
 <tr><td style="${F}font-size:13px;line-height:20px;color:#111827;padding:0"><b>UEI:</b> VA4LAHDJT2R3&nbsp;&nbsp;|&nbsp;&nbsp;<b>CAGE:</b> 9V3J1</td></tr>
-<tr><td style="${F}font-size:14px;line-height:20px;color:#111827;padding:0 0 12px 0"><b>Website:</b> <a href="https://emprise-partners.com" title="emprise-partners.com" style="text-decoration:none"><img src="${GLOBE}" width="16" height="16" alt="emprise-partners.com" style="width:16px;height:16px;border:0;vertical-align:-3px"></a></td></tr>
-<tr><td style="padding:0"><a href="https://emprise-partners.com"><img src="${LOGO}" width="150" height="40" alt="Emprise Partners" style="display:block;border:0;width:150px;height:40px"></a></td></tr>
-</table>`;
+<tr><td style="${F}font-size:14px;line-height:20px;color:#111827;padding:0"><b>Website:</b> <a href="https://emprise-partners.com" title="emprise-partners.com" style="text-decoration:none"><img src="${GLOBE}" width="16" height="16" alt="emprise-partners.com" style="width:16px;height:16px;border:0;vertical-align:-3px"></a></td></tr>`;
+  return `<table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;${F}"><tr>
+<td valign="middle" style="padding:0 18px 0 0;vertical-align:middle"><a href="https://emprise-partners.com"><img src="${LOGO}" width="150" height="40" alt="Emprise Partners" style="display:block;border:0;width:150px;height:40px"></a></td>
+<td valign="middle" style="border-left:3px solid #0c52ac;padding:0 0 0 18px;vertical-align:middle"><table cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse">${rows}</table></td>
+</tr></table>`;
  }
  function text() {
   const ext = val('ext').replace(/\D/g,''), cell = fmtCell(val('cell'));
